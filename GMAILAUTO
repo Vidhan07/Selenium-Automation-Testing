@@ -1,0 +1,77 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Selenium_GmailCOMPLETEAUTOMATION{
+	public static void main(String[] args) throws InterruptedException{
+		System.setProperty("webdriver.chrome.driver","E:\\chromedriver.exe");
+			WebDriver driver = new ChromeDriver();
+			
+			//NAVIGATE TO THE URL
+			driver.navigate().to("http://mail.google.com");
+			
+			driver.manage().window().maximize();
+			//wait for the element to load
+			
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			
+			//enter EMAIL ID
+			driver.findElement(By.cssSelector("#identifierId")).sendKeys("abhidholakia7@gmail.com");
+			
+			//click on next button
+			
+			driver.findElement(By.cssSelector("#identifierNext > content > span")).click();
+			
+			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+			
+			//enter PASSWORD
+			
+			driver.findElement(By.cssSelector("#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input")).sendKeys("@bh!dhol@k!@");
+			
+			//sign in button
+			driver.findElement(By.cssSelector("#passwordNext > content > span")).click();
+			
+			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+			
+			
+			//click on compose button
+			/*IN SOME CASES, WE CAN'T DIRECTLY USE CSS SELECTORS. EXAMPLE WHEN THE SELECTOR STARTS FROM /. USE XPATH IN SUCH CASES*/
+			driver.findElement(By.cssSelector(".aic .z0 div")).click();
+			//close will close the specific page. quit will completely close everything
+
+			//set to:
+			//TO:
+			driver.findElement(By.cssSelector(".oj div textarea")).sendKeys("vbdholakia@yahoo.co.in");
+			
+			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+			
+			//SUBJECT
+			driver.findElement(By.cssSelector(".aoD.az6 input")).sendKeys("SELENIUM SAMPLE TESTING 1!! ");
+			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+			
+			//MESSAGE
+			driver.findElement(By.cssSelector(".Ar.Au div")).sendKeys("HELLO WASSUP????????");
+			
+			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+			
+			//SEND BUTTON
+		
+			//driver.findElement(By.cssSelector("tr.n1tfz td:nth-of-type(1) div div:nth-of-type(2)")).click();
+			driver.findElement(By.xpath("//div[text()='Send']")).click();
+			
+			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+			//LOGOUT
+			driver.findElement(By.cssSelector("#gb > div.gb_td.gb_0d.gb_Bd.gb_Zb > div.gb_lc.gb_Ja.gb_kc > div > div.gb_Ea.gb_Tc.gb_mg.gb_f.gb_wf > div > a > span")).click();
+		
+			driver.findElement(By.cssSelector("#gb_71")).click();
+			
+			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+			
+			Thread.sleep(10000);
+			
+			
+  }
+}
