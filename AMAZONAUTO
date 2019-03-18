@@ -1,0 +1,55 @@
+package selenium;
+
+import org.openqa.selenium.By;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Selenium_AMAZONAUTOMATION{
+	public static void main(String[] args) throws InterruptedException{
+		System.setProperty("webdriver.chrome.driver","E:\\chromedriver.exe");
+			WebDriver driver = new ChromeDriver();
+			
+			driver.manage().window().maximize();
+			
+			//NAVIGATE TO THE URL
+			driver.navigate().to("https://www.amazon.in/");
+			
+			//wait for the element to load
+			
+			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+			
+		
+			driver.findElement(By.cssSelector("#nav-link-accountList > span.nav-line-1")).click();
+			
+			
+			driver.findElement(By.cssSelector("#ap_email")).sendKeys("");
+			
+			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+			
+			
+			driver.findElement(By.cssSelector("#continue")).click();
+			
+			
+			driver.findElement(By.cssSelector("#ap_password")).sendKeys("");
+			
+			driver.findElement(By.cssSelector("#signInSubmit")).click();
+			
+			//sign in button
+			driver.findElement(By.cssSelector("#twotabsearchtextbox")).sendKeys("redmi note 7 pro");
+		
+			
+			//click on compose button
+			/*IN SOME CASES, WE CAN'T DIRECTLY USE CSS SELECTORS. EXAMPLE WHEN THE SELECTOR STARTS FROM /. USE XPATH IN SUCH CASES*/
+			driver.findElement(By.cssSelector("#nav-search > form > div.nav-right > div > input")).click();
+			//close will close the specific page. quit will completely close everything
+			
+			//set to:
+			//TO:
+			driver.findElement(By.cssSelector("#result_0 > div > div > div > div.a-fixed-left-grid-col.a-col-right > div.a-row.a-spacing-small > div:nth-child(1) > a > h2")).click();
+			
+			driver.findElement(By.cssSelector("#add-to-cart-button")).click();
+			
+			Thread.sleep(10000);
+  }
+}
