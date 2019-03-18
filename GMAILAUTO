@@ -19,7 +19,7 @@ public class Selenium_GmailCOMPLETEAUTOMATION{
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 			
 			//enter EMAIL ID
-			driver.findElement(By.cssSelector("#identifierId")).sendKeys("abhidholakia7@gmail.com");
+			driver.findElement(By.cssSelector("#identifierId")).sendKeys("");
 			
 			//click on next button
 			
@@ -29,7 +29,7 @@ public class Selenium_GmailCOMPLETEAUTOMATION{
 			
 			//enter PASSWORD
 			
-			driver.findElement(By.cssSelector("#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input")).sendKeys("@bh!dhol@k!@");
+			driver.findElement(By.cssSelector("#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input")).sendKeys("");
 			
 			//sign in button
 			driver.findElement(By.cssSelector("#passwordNext > content > span")).click();
@@ -44,7 +44,7 @@ public class Selenium_GmailCOMPLETEAUTOMATION{
 
 			//set to:
 			//TO:
-			driver.findElement(By.cssSelector(".oj div textarea")).sendKeys("vbdholakia@yahoo.co.in");
+			driver.findElement(By.cssSelector(".oj div textarea")).sendKeys("");
 			
 			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 			
